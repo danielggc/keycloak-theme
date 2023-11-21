@@ -18,7 +18,7 @@ services:
       - KC_SPI_THEME_LOGIN_THEME=my-theme
       - KC_SPI_THEME_EMAIL_THEME=my-theme
     volumes:
-      - ./themes/my-theme:/opt/jboss/keycloak/themes/my-theme
+      - ./themes/my-theme:/opt/jboss/keycloak/themes/my-theme2
     networks:
       internal:
     depends_on:
