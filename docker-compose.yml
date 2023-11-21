@@ -12,14 +12,18 @@ services:
       - DB_PASSWORD=${KEYCLOAK_DATABASE_PASSWORD}
       - DB_ADDR=${KEYCLOAK_DATABASE_HOST}
       - DB_VENDOR=${KEYCLOAK_DATABASE_VENDOR}
-      - KC_SPI_THEME_DEFAULT=${THEME}
+      - KC_SPI_THEME_DEFAULT=my-theme
+      - KC_SPI_THEME_WELCOME_THEME=my-theme
+      - KC_SPI_THEME_ACCOUNT_THEME=my-theme
+      - KC_SPI_THEME_LOGIN_THEME=my-theme
+      - KC_SPI_THEME_EMAIL_THEME=my-theme
     volumes:
       - ./themes/my-theme:/opt/jboss/keycloak/themes/my-theme
     networks:
       internal:
     depends_on:
       - keycloakdb
-    
+
  
   keycloakdb:
     image: postgres:${POSTGRES_VERSION}
@@ -39,3 +43,7 @@ volumes:
  
 networks:
   internal:
+
+
+
+
