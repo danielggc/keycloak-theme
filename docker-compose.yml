@@ -1,6 +1,7 @@
 version: '3.3'
 services:
   keycloak:
+    build: .
     image: jboss/keycloak:${KEYCLOAK_VERSION}
     ports:
       - "8024:8080"
@@ -43,6 +44,10 @@ volumes:
  
 networks:
   internal:
+
+
+
+
 
 
 
