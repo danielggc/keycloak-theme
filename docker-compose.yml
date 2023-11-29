@@ -1,48 +1,46 @@
 version: '3.3'
+volumes:
+  keycloak-db-data:
+    driver: local
+
+ 
+
 services:
-  keycloak:
-    image: jboss/keycloak:${KEYCLOAK_VERSION}
-    ports:
-      - "8024:8080"
+  postgres:
+    image: postgres:13.7
+    container_name: postgres
+    volumes:
+      - keycloak-db-data:/var/lib/postgresql/data
     environment:
-      - KEYCLOAK_USER=${KEYCLOAK_USER}
-      - KEYCLOAK_PASSWORD=${KEYCLOAK_PASSWORD}
+      - POSTGRES_DB=${KEYCLOAK_DATABASE_NAME}
+      - POSTGRES_USER=${KEYCLOAK_DATABASE_USER}
+      - POSTGRES_PASSWORD=${KEYCLOAK_DATABASE_PASSWORD}
+  keycloak:
+    build: .
+    container_name: keycloak-test-theme
+    ports:
+      - 8443:8443
+      - 8080:8080
+    environment:
       - DB_DATABASE=${KEYCLOAK_DATABASE_NAME}
       - DB_USER=${KEYCLOAK_DATABASE_USER}
       - DB_PASSWORD=${KEYCLOAK_DATABASE_PASSWORD}
       - DB_ADDR=${KEYCLOAK_DATABASE_HOST}
       - DB_VENDOR=${KEYCLOAK_DATABASE_VENDOR}
-      - KC_SPI_THEME_DEFAULT=my-theme
+      - KEYCLOAK_ADMIN=${KEYCLOAK_USER}
+      - KEYCLOAK_ADMIN_PASSWORD=${KEYCLOAK_PASSWORD}
+      - KC_HTTP_PORT=8080
       - KC_SPI_THEME_WELCOME_THEME=my-theme
       - KC_SPI_THEME_ACCOUNT_THEME=my-theme
       - KC_SPI_THEME_LOGIN_THEME=my-theme
-      - KC_SPI_THEME_EMAIL_THEME=my-theme
     volumes:
-      - ./themes/keycloak.v2:/opt/jboss/keycloak/themes/theme4
-    networks:
-      internal:
+      - ./themes/my-theme:/opt/keycloak/themes/my-theme/
     depends_on:
-      - keycloakdb
-
- 
-  keycloakdb:
-    image: postgres:${POSTGRES_VERSION}
-    ports:
-      - "5433:5432"
-    environment:
-      - POSTGRES_USER=${KEYCLOAK_DATABASE_USER}
-      - POSTGRES_PASSWORD=${KEYCLOAK_DATABASE_PASSWORD}
-      - POSTGRES_DB=${KEYCLOAK_DATABASE_NAME}
-    volumes:
-      - keycloak-postgres:/var/lib/postgresql/data
-    networks:
-      internal:
- 
-volumes:
-  keycloak-postgres:
- 
-networks:
-  internal:
+      - postgres
+    command:
+      - start-dev
+      - --import-realm
+      - --http-relative-path=/auth
 
 
 
