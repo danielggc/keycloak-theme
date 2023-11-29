@@ -23,7 +23,7 @@
  
 <html>
 <head>
-    <title>Welcome to pokemon</title>
+    <title>Welcome to Keycloak</title>
 
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
