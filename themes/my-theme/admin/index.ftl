@@ -8,82 +8,82 @@
     <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="shortcut icon" href="${resourceUrl}/img/favicon.ico">
+    <link rel="shortcut icon" href="${resourcesPath}/img/favicon.ico">
     <#if properties.styles?has_content>
     <#list properties.styles?split(' ') as style>
-    <link href="${resourceUrl}/${style}" rel="stylesheet" />
+    <link href="${resourcesPath}/${style}" rel="stylesheet" />
     </#list>
     </#if>
 
     <script type="text/javascript">
         var authUrl = '${authUrl}';
         var consoleBaseUrl = '${consoleBaseUrl}';
-        var resourceUrl = '${resourceUrl}';
+        var resourcesPath = '${resourcesPath}';
         var masterRealm = '${masterRealm}';
         var resourceVersion = '${resourceVersion}';
     </script>
 
     <!-- Minimized versions (for those that have one) -->
-    <script src="${resourceUrl}/node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
-    <script src="${resourceUrl}/node_modules/select2/select2.js" type="text/javascript"></script>
-    <script src="${resourceUrl}/node_modules/angular/angular.min.js"></script>
-    <script src="${resourceUrl}/node_modules/angular-resource/angular-resource.min.js"></script>
-    <script src="${resourceUrl}/node_modules/angular-route/angular-route.min.js"></script>
-    <script src="${resourceUrl}/node_modules/angular-cookies/angular-cookies.min.js"></script>
-    <script src="${resourceUrl}/node_modules/angular-sanitize/angular-sanitize.min.js"></script>
-    <script src="${resourceUrl}/node_modules/angular-translate/dist/angular-translate.min.js"></script>
-    <script src="${resourceUrl}/node_modules/angular-translate-loader-url/angular-translate-loader-url.min.js"></script>
-    <script src="${resourceUrl}/node_modules/angular-ui-select2/src/select2.js" type="text/javascript"></script>
-    <script src="${resourceUrl}/node_modules/autofill-event/autofill-event.js"></script>
+    <script src="${resourcesPath}/node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="${resourcesPath}/node_modules/select2/select2.js" type="text/javascript"></script>
+    <script src="${resourcesPath}/node_modules/angular/angular.min.js"></script>
+    <script src="${resourcesPath}/node_modules/angular-resource/angular-resource.min.js"></script>
+    <script src="${resourcesPath}/node_modules/angular-route/angular-route.min.js"></script>
+    <script src="${resourcesPath}/node_modules/angular-cookies/angular-cookies.min.js"></script>
+    <script src="${resourcesPath}/node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="${resourcesPath}/node_modules/angular-translate/dist/angular-translate.min.js"></script>
+    <script src="${resourcesPath}/node_modules/angular-translate-loader-url/angular-translate-loader-url.min.js"></script>
+    <script src="${resourcesPath}/node_modules/angular-ui-select2/src/select2.js" type="text/javascript"></script>
+    <script src="${resourcesPath}/node_modules/autofill-event/autofill-event.js"></script>
 
 
     <!-- Unminimized versions
-    <script src="${resourceUrl}/node_modules/jquery/dist/jquery.js" type="text/javascript"></script>
-    <script src="${resourceUrl}/node_modules/select2/select2.js" type="text/javascript"></script>
-    <script src="${resourceUrl}/node_modules/angular/angular.js"></script>
-    <script src="${resourceUrl}/node_modules/angular-resource/angular-resource.js"></script>
-    <script src="${resourceUrl}/node_modules/angular-route/angular-route.js"></script>
-    <script src="${resourceUrl}/node_modules/angular-cookies/angular-cookies.js"></script>
-    <script src="${resourceUrl}/node_modules/angular-sanitize/angular-sanitize.js"></script>
-    <script src="${resourceUrl}/node_modules/angular-translate/dist/angular-translate.js"></script>
-    <script src="${resourceUrl}/node_modules/angular-translate-loader-url/angular-translate-loader-url.js"></script>
-    <script src="${resourceUrl}/node_modules/angular-ui-select2/src/select2.js" type="text/javascript"></script>
-    <script src="${resourceUrl}/node_modules/autofill-event/autofill-event.js"></script>
+    <script src="${resourcesPath}/node_modules/jquery/dist/jquery.js" type="text/javascript"></script>
+    <script src="${resourcesPath}/node_modules/select2/select2.js" type="text/javascript"></script>
+    <script src="${resourcesPath}/node_modules/angular/angular.js"></script>
+    <script src="${resourcesPath}/node_modules/angular-resource/angular-resource.js"></script>
+    <script src="${resourcesPath}/node_modules/angular-route/angular-route.js"></script>
+    <script src="${resourcesPath}/node_modules/angular-cookies/angular-cookies.js"></script>
+    <script src="${resourcesPath}/node_modules/angular-sanitize/angular-sanitize.js"></script>
+    <script src="${resourcesPath}/node_modules/angular-translate/dist/angular-translate.js"></script>
+    <script src="${resourcesPath}/node_modules/angular-translate-loader-url/angular-translate-loader-url.js"></script>
+    <script src="${resourcesPath}/node_modules/angular-ui-select2/src/select2.js" type="text/javascript"></script>
+    <script src="${resourcesPath}/node_modules/autofill-event/autofill-event.js"></script>
     -->
 
     <!-- Libraries not managed by yarn -->
-    <script src="${resourceUrl}/lib/angular/ui-bootstrap-tpls-0.11.0.js"></script>
-    <script src="${resourceUrl}/lib/angular/treeview/angular.treeview.js"></script>
-    <script src="${resourceUrl}/lib/fileupload/angular-file-upload.min.js"></script>
-    <script src="${resourceUrl}/lib/filesaver/FileSaver.js"></script>
-    <script src="${resourceUrl}/lib/ui-ace/min/ace.js"></script>
-    <script src="${resourceUrl}/lib/ui-ace/ui-ace.min.js"></script>
+    <script src="${resourcesPath}/lib/angular/ui-bootstrap-tpls-0.11.0.js"></script>
+    <script src="${resourcesPath}/lib/angular/treeview/angular.treeview.js"></script>
+    <script src="${resourcesPath}/lib/fileupload/angular-file-upload.min.js"></script>
+    <script src="${resourcesPath}/lib/filesaver/FileSaver.js"></script>
+    <script src="${resourcesPath}/lib/ui-ace/min/ace.js"></script>
+    <script src="${resourcesPath}/lib/ui-ace/ui-ace.min.js"></script>
 
     <script src="${authUrl}/js/keycloak.js?version=${resourceVersion}" type="text/javascript"></script>
 
-    <script src="${resourceUrl}/js/app.js" type="text/javascript"></script>
-    <script src="${resourceUrl}/js/controllers/realm.js" type="text/javascript"></script>
-    <script src="${resourceUrl}/js/controllers/clients.js" type="text/javascript"></script>
-    <script src="${resourceUrl}/js/controllers/users.js" type="text/javascript"></script>
-    <script src="${resourceUrl}/js/controllers/groups.js" type="text/javascript"></script>
-    <script src="${resourceUrl}/js/controllers/roles.js" type="text/javascript"></script>
-    <script src="${resourceUrl}/js/loaders.js" type="text/javascript"></script>
-    <script src="${resourceUrl}/js/services.js" type="text/javascript"></script>
+    <script src="${resourcesPath}/js/app.js" type="text/javascript"></script>
+    <script src="${resourcesPath}/js/controllers/realm.js" type="text/javascript"></script>
+    <script src="${resourcesPath}/js/controllers/clients.js" type="text/javascript"></script>
+    <script src="${resourcesPath}/js/controllers/users.js" type="text/javascript"></script>
+    <script src="${resourcesPath}/js/controllers/groups.js" type="text/javascript"></script>
+    <script src="${resourcesPath}/js/controllers/roles.js" type="text/javascript"></script>
+    <script src="${resourcesPath}/js/loaders.js" type="text/javascript"></script>
+    <script src="${resourcesPath}/js/services.js" type="text/javascript"></script>
 
     <!-- Authorization -->
-    <script src="${resourceUrl}/js/authz/authz-app.js" type="text/javascript"></script>
-    <script src="${resourceUrl}/js/authz/authz-controller.js" type="text/javascript"></script>
-    <script src="${resourceUrl}/js/authz/authz-services.js" type="text/javascript"></script>
+    <script src="${resourcesPath}/js/authz/authz-app.js" type="text/javascript"></script>
+    <script src="${resourcesPath}/js/authz/authz-controller.js" type="text/javascript"></script>
+    <script src="${resourcesPath}/js/authz/authz-services.js" type="text/javascript"></script>
 
     <#if properties.scripts?has_content>
         <#list properties.scripts?split(' ') as script>
-            <script type="text/javascript" src="${resourceUrl}/${script}"></script>
+            <script type="text/javascript" src="${resourcesPath}/${script}"></script>
         </#list>
     </#if>
 </head>
 <body data-ng-controller="GlobalCtrl" data-ng-cloak data-ng-show="auth.user">
 
-<nav class="navbar navbar-default navbar-pf project-primary-color-background " role="navigation" data-ng-include data-src="resourceUrl + '/partials/menu.html'">
+<nav class="navbar navbar-default navbar-pf project-primary-color-background " role="navigation" data-ng-include data-src="resourcesPath + '/partials/menu.html'">
 </nav>
 
 <div class="container-fluid">
