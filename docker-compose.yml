@@ -1,7 +1,6 @@
 version: '3.3'
 services:
   keycloak:
-    build: .
     image: jboss/keycloak:${KEYCLOAK_VERSION}
     ports:
       - "8024:8080"
@@ -19,7 +18,7 @@ services:
       - KC_SPI_THEME_LOGIN_THEME=my-theme
       - KC_SPI_THEME_EMAIL_THEME=my-theme
     volumes:
-      - ./themes/my-theme:/opt/jboss/keycloak/themes/my-theme
+      - ./themes/keycloak.v2:/opt/jboss/keycloak/themes/theme4
     networks:
       internal:
     depends_on:
